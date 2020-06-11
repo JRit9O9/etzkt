@@ -93,12 +93,12 @@ function Account() {
         anchorEl={ref.current}
         open={isOpen}
       >
-        <MenuItem
+        {/* <MenuItem
           component={RouterLink}
           to="/app/social/profile"
         >
           Profile
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem
           component={RouterLink}
           to="/app/account"

@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8, 4, 3, 4)
   },
   icon: {
-    backgroundColor: colors.green[500],
+    backgroundColor: '#005450' ,
     color: theme.palette.common.white,
     borderRadius: theme.shape.borderRadius,
     padding: theme.spacing(1),
@@ -86,20 +86,20 @@ function LoginView() {
       className={classes.root}
       title="Login"
     >
-      <Container maxWidth="md">
+      <Container maxWidth="sm">
         <Box
           mb={8}
           display="flex"
           alignItems="center"
         >
           <RouterLink to="/">
-          <Logo />
           </RouterLink>
         </Box>
         <Card className={classes.card}>
           <CardContent className={classes.content}>
             <Avatar className={classes.icon}>
-              <LockIcon fontSize="large" />
+              {/* <h1 style={{fontSize:"50px", fontFamily:"baloo chetan"}}>e</h1> */}
+              <img src={require('src/assets/eatiz_1024.jpg')} style={{width:"2rem"}} />
             </Avatar>
             <Typography
               variant="h2"
@@ -143,7 +143,7 @@ function LoginView() {
               Forgot password
             </Link>
           </CardContent>
-          <CardMedia
+          {/* <CardMedia
             className={classes.media}
             image={require('src/assets/img304.jpg')}
             title="Cover"
@@ -163,7 +163,7 @@ function LoginView() {
                 alt="Person"
                 src="/static/images/avatars/avatar_2.png"
               /> */}
-              <Box ml={3}>
+              {/* <Box ml={3}>
                 <Typography
                   color="inherit"
                   variant="body1"
@@ -176,9 +176,9 @@ function LoginView() {
                 >
                   
                 </Typography>
-              </Box>
+              </Box> */}
             {/* </Box> */}
-          </CardMedia>
+          {/* </CardMedia> */} 
         </Card>
       </Container>
     </Page>

@@ -24,7 +24,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import { Users as UsersIcon } from 'react-feather';
+import { Globe as GlobeIcon } from 'react-feather';
 import OnlineIndicator from 'src/components/OnlineIndicator';
 import { getContacts } from 'src/actions/chatActions';
 
@@ -65,18 +65,18 @@ function Contacts() {
 
   return (
     <>
-      <Tooltip title="Contacts">
+      <Tooltip title="Globe">
         <IconButton
           color="inherit"
           onClick={handleOpen}
           ref={ref}
         >
           <SvgIcon fontSize="small">
-            <UsersIcon />
+            <GlobeIcon />
           </SvgIcon>
         </IconButton>
       </Tooltip>
-      <Popover
+      {/* <Popover
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center'
@@ -145,7 +145,7 @@ function Contacts() {
             })}
           </List>
         </Box>
-      </Popover>
+      </Popover> */}
     </>
   );
 }

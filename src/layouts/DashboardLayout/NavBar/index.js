@@ -40,17 +40,24 @@ const navConfig = [
       {
         title: 'Message',
         icon: MessageSquareIcon,
-        href: '/app/reports/dashboard-alternative'
+        href: '/app/chat',
+        info: () => (
+          <Chip
+            color="secondary"
+            size="small"
+            label="Updated"
+          />
+        )
       },
       {
         title: 'Shared Listings',
         icon: ListIcon,
-        href: '/app/reports/dashboard-alternative'
+        href: '/app/management/products'
       },
       {
         title: 'Customers',
         icon: UsersIcon,
-        href: '/app/reports/dashboard-alternative'
+        href: '/app/management/customers'
       }
     ]
   }]

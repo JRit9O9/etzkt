@@ -70,9 +70,9 @@ function TopBar({
           flexGrow={1}
         />
         <Search />
-        <Contacts />
-        <Notifications />
         <Settings />
+        <Notifications />
+        <Contacts />
         <Box ml={2}>
           <Account />
         </Box>

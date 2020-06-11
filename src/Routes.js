@@ -72,7 +72,7 @@ const routesConfig = [
       },
       {
         exact: true,
-        // path: '/app/reports/dashboard-alternative',
+        path: '/app/reports/dashboard-alternative',
         component: lazy(() => import('src/views/reports/DashboardAlternativeView'))
       },
       {
