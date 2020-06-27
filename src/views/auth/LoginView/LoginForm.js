@@ -12,6 +12,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import { login } from 'src/actions/accountActions';
+import axios from 'axios';
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -24,8 +25,8 @@ function LoginForm({ className, onSubmitSuccess, ...rest }) {
   return (
     <Formik
       initialValues={{
-        email: 'admin@devias.io',
-        password: 'admin'
+        email: 'admin.devias@gmail.co',
+        password: 'admin123A'
       }}
       validationSchema={Yup.object().shape({
         email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
@@ -37,10 +38,14 @@ function LoginForm({ className, onSubmitSuccess, ...rest }) {
         setSubmitting
       }) => {
         try {
+          console.log(values.email, values.password);
+          
+
           await dispatch(login(values.email, values.password));
           onSubmitSuccess();
         } catch (error) {
-          const message = (error.response && error.response.data.message) || 'Something went wrong';
+          console.log(error);
+          const message = 'Something went wrong';
 
           setStatus({ success: false });
           setErrors({ submit: message });

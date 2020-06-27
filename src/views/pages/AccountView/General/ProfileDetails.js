@@ -69,6 +69,12 @@ function ProfileDetails({ user, className, ...rest }) {
           fullWidth
           variant="text"
         >
+          add picture
+        </Button>
+        <Button
+          fullWidth
+          variant="text"
+        >
           Remove picture
         </Button>
       </CardActions>

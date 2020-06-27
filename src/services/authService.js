@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode';
-import axios from 'src/utils/axios';
+import axios from 'axios';
 
 class AuthService {
   setAxiosInterceptors = ({ onLogout }) => {
@@ -34,16 +34,31 @@ class AuthService {
   }
 
   loginWithEmailAndPassword = (email, password) => new Promise((resolve, reject) => {
-    axios.post('/api/account/login', { email, password })
-      .then((response) => {
-        if (response.data.user) {
-          this.setSession(response.data.accessToken);
-          resolve(response.data.user);
-        } else {
-          reject(response.data.error);
-        }
-      })
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+          axios
+            .post( proxyUrl+ "http://ebeta-admin.in:8080/api/Collaborator/signin/",
+           {
+                   email,password
+           } 
+          )
+          .then(response => {
+            resolve(response.data);
+            console.log("res from login", response);
+          })
+          
+    // axios.post('/Customer/signin/', { email, password })
+    //   .then((response) => {
+    //     console.log(response);
+    //     if (response.data.user) {
+    //       this.setSession(response.data.accessToken);
+    //       resolve(response.data.user);
+    //     } else {
+    //       reject(response.data.error);
+    //     }
+      //})
       .catch((error) => {
+        console.log(error);
+        
         reject(error);
       });
   })
@@ -51,11 +66,12 @@ class AuthService {
   loginInWithToken = () => new Promise((resolve, reject) => {
     axios.get('/api/account/me')
       .then((response) => {
-        if (response.data.user) {
-          resolve(response.data.user);
-        } else {
-          reject(response.data.error);
-        }
+        if(response.data.success){
+          resolve()
+          }
+          else{
+          reject()
+          }
       })
       .catch((error) => {
         reject(error);

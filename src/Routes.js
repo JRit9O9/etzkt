@@ -20,7 +20,7 @@ import GuestGuard from 'src/components/GuestGuard';
 const routesConfig = [
   {
     exact: true,
-    path: '/login',
+    path: '/',
     component:  lazy(() => import('src/views/auth/LoginView'))
   },
   // {
@@ -28,12 +28,12 @@ const routesConfig = [
   //   path: '/404',
   //   component: lazy(() => import('src/views/pages/Error404View'))
   // },
-  // {
-  //   exact: true,
-  //   guard: GuestGuard,
-  //   path: '/login',
-  //   component: lazy(() => import('src/views/auth/LoginView'))
-  // },
+  {
+    exact: true,
+    guard: GuestGuard,
+    path: '/login',
+    component: lazy(() => import('src/views/auth/LoginView'))
+  },
   {
     exact: true,
     path: '/login-unprotected',

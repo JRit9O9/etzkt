@@ -50,7 +50,7 @@ function Account() {
     try {
       handleClose();
       await dispatch(logout());
-      history.push('/login');
+      history.push('/');
     } catch (error) {
       enqueueSnackbar('Unable to logout', {
         variant: 'error'

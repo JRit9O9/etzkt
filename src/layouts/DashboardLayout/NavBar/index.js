@@ -404,8 +404,8 @@ function NavBar({ openMobile, onMobileClose, }) {
             </RouterLink>
           </Box>
         </Hidden>
-        <Box p={2}>
-          <Box
+        {/* <Box p={2}> */}
+          {/* <Box
             display="flex"
             justifyContent="center"
           >
@@ -416,12 +416,12 @@ function NavBar({ openMobile, onMobileClose, }) {
                 src={user.avatar}
               />
             </RouterLink>
-          </Box>
-          <Box
+          </Box> */}
+          {/* <Box
             mt={2}
             textAlign="center"
-          >
-            <Link
+          > */}
+            {/* <Link
               component={RouterLink}
               to="/app/account"
               variant="h5"
@@ -429,16 +429,16 @@ function NavBar({ openMobile, onMobileClose, }) {
               underline="none"
             >
               {`${user.firstName} ${user.lastName}`}
-            </Link>
-            <Typography
+            </Link> */}
+            {/* <Typography
               variant="body2"
               color="textSecondary"
             >
               {user.bio}
-            </Typography>
-          </Box>
-        </Box>
-        <Divider />
+            </Typography> */}
+          {/* </Box> */}
+        {/* </Box> */}
+        {/* <Divider /> */}
         <Box p={2}>
           {navConfig.map((config) => (
             <List
@@ -457,12 +457,12 @@ function NavBar({ openMobile, onMobileClose, }) {
           ))}
         </Box>
         <Divider />
-        <Box p={2}>
+        {/* <Box p={2}>
           <Box
             p={2}
             borderRadius="borderRadius"
             bgcolor="background.dark"
-            style={{marginTop:"275px"}}
+            style={{marginTop:"420px"}}
           >
             <Typography
               variant="h6"
@@ -479,7 +479,7 @@ function NavBar({ openMobile, onMobileClose, }) {
               Check our docs
             </Link>
           </Box>
-        </Box>
+        </Box> */}
       </PerfectScrollbar>
     </Box>
   );

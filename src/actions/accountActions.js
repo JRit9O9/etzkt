@@ -10,6 +10,8 @@ export const REGISTER = '@account/register';
 export const UPDATE_PROFILE = '@account/update-profile';
 
 export function login(email, password) {
+  console.log("_____");
+  
   return async (dispatch) => {
     try {
       dispatch({ type: LOGIN_REQUEST });
@@ -23,6 +25,8 @@ export function login(email, password) {
         }
       });
     } catch (error) {
+      console.log(error);
+      
       dispatch({ type: LOGIN_FAILURE });
       throw error;
     }

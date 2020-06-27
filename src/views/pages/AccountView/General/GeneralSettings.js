@@ -22,6 +22,9 @@ import {
 import { updateProfile } from 'src/actions/accountActions';
 
 const stateOptions = ['Alabama', 'New York', 'San Francisco'];
+const genderOptions = ['Male', 'Female', 'Other'];
+const languageOptions = ['English', 'Spanish', 'Chinese'];
+const currencyOptions = ['$', 'Euro', 'Rupay'];
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -42,6 +45,8 @@ function GeneralSettings({ user, className, ...rest }) {
         firstName: user.firstName,
         isPublic: user.isPublic,
         lastName: user.lastName,
+        userName: user.userName,
+        birthDate: user.birthDate,
         phone: user.phone,
         state: user.state,
       }}
@@ -156,6 +161,108 @@ function GeneralSettings({ user, className, ...rest }) {
                   xs={12}
                 >
                   <TextField
+                    error={Boolean(touched.userName && errors.userName)}
+                    fullWidth
+                    helperText={touched.userName && errors.userName}
+                    label="Username"
+                    name="userName"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    type="userName"
+                    value={values.userName}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    error={Boolean(touched.birthDate && errors.birthDate)}
+                    fullWidth
+                    helperText={touched.birthDate && errors.birthDate}
+                    label="Birth Date"
+                    name="birthDate"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    type="birthDate"
+                    value={values.birthDate}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                <TextField
+                    fullWidth
+                    label="Gender"
+                    name="gender"
+                    onChange={handleChange}
+                    select
+                    SelectProps={{ native: true }}
+                    value={values.state}
+                    variant="outlined"
+                  >
+                   {genderOptions.map((state) => (
+                      <option
+                        key={state}
+                        value={state}
+                      >
+                        {state}
+                      </option>
+                    ))}   
+
+                  </TextField>
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    error={Boolean(touched.organisation && errors.organisation)}
+                    fullWidth
+                    helperText={touched.organisation && errors.organisation}
+                    label="Organisation"
+                    name="organisation"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    type="organisation"
+                    value={values.organisation}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    error={Boolean(touched.position && errors.position)}
+                    fullWidth
+                    helperText={touched.position && errors.position}
+                    label="Position"
+                    name="position"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    type="position"
+                    value={values.position}
+                    variant="outlined"
+                  />
+                </Grid>
+                {/* <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
                     error={Boolean(touched.phone && errors.phone)}
                     fullWidth
                     helperText={touched.phone && errors.phone}
@@ -166,7 +273,7 @@ function GeneralSettings({ user, className, ...rest }) {
                     value={values.phone}
                     variant="outlined"
                   />
-                </Grid>
+                </Grid> */}
                 <Grid
                   item
                   md={6}
@@ -216,6 +323,76 @@ function GeneralSettings({ user, className, ...rest }) {
                   md={6}
                   xs={12}
                 >
+                <TextField
+                    fullWidth
+                    label="Language"
+                    name="language"
+                    onChange={handleChange}
+                    select
+                    SelectProps={{ native: true }}
+                    value={values.state}
+                    variant="outlined"
+                  >
+                   {languageOptions.map((state) => (
+                      <option
+                        key={state}
+                        value={state}
+                      >
+                        {state}
+                      </option>
+                    ))}   
+
+                  </TextField>
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                <TextField
+                    fullWidth
+                    label="Currency"
+                    name="currency"
+                    onChange={handleChange}
+                    select
+                    SelectProps={{ native: true }}
+                    value={values.state}
+                    variant="outlined"
+                  >
+                   {currencyOptions.map((state) => (
+                      <option
+                        key={state}
+                        value={state}
+                      >
+                        {state}
+                      </option>
+                    ))}   
+
+                  </TextField>
+                </Grid>
+                <Grid
+                  item
+                  md={12}
+                  xs={12}
+                >
+                   <TextField
+                    fullWidth
+                    label="About me"
+                    name="about"
+                    multiline
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    type="email"
+                    value={values.backupEmail}
+                    variant="outlined"
+                    rows={4}
+                  />
+                </Grid>
+                {/* <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
                   <Typography
                     variant="h6"
                     color="textPrimary"
@@ -235,8 +412,8 @@ function GeneralSettings({ user, className, ...rest }) {
                     name="isPublic"
                     onChange={handleChange}
                   />
-                </Grid>
-                <Grid
+                </Grid> */}
+                {/* <Grid
                   item
                   md={6}
                   xs={12}
@@ -260,7 +437,7 @@ function GeneralSettings({ user, className, ...rest }) {
                     name="canHire"
                     onChange={handleChange}
                   />
-                </Grid>
+                </Grid> */}
               </Grid>
               {errors.submit && (
                 <Box mt={3}>
@@ -282,7 +459,7 @@ function GeneralSettings({ user, className, ...rest }) {
                 type="submit"
                 variant="contained"
               >
-                Save Changes
+                Update Information
               </Button>
             </Box>
           </Card>

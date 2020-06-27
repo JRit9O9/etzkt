@@ -10,9 +10,11 @@ import {
 import Page from 'src/components/Page';
 import Header from './Header';
 import General from './General';
+import SocialMedia from './SocialMedia';
 import Subscription from './Subscription';
 import Notifications from './Notifications';
 import Security from './Security';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,9 +30,9 @@ function AccountView() {
   const [currentTab, setCurrentTab] = useState('general');
   const tabs = [
     { value: 'general', label: 'General' },
-    { value: 'subscription', label: 'Subscription' },
-    { value: 'notifications', label: 'Notifications' },
-    { value: 'security', label: 'Security' }
+    { value: 'security', label: 'Security' },
+    { value: 'socialmedia', label: 'Social Media' },
+    { value: 'notifications', label: 'Notifications' }
   ];
 
   const handleTabsChange = (event, value) => {
@@ -65,9 +67,9 @@ function AccountView() {
         <Divider />
         <Box mt={3}>
           {currentTab === 'general' && <General />}
-          {currentTab === 'subscription' && <Subscription />}
-          {currentTab === 'notifications' && <Notifications />}
           {currentTab === 'security' && <Security />}
+          {currentTab === 'socialmedia' && <SocialMedia />}
+          {currentTab === 'notifications' && <Notifications />}
         </Box>
       </Container>
     </Page>

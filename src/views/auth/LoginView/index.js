@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {UseState} from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import {
@@ -92,13 +92,10 @@ function LoginView() {
           display="flex"
           alignItems="center"
         >
-          <RouterLink to="/">
-          </RouterLink>
         </Box>
         <Card className={classes.card}>
           <CardContent className={classes.content}>
             <Avatar className={classes.icon}>
-              {/* <h1 style={{fontSize:"50px", fontFamily:"baloo chetan"}}>e</h1> */}
               <img src={require('src/assets/eatiz_1024.jpg')} style={{width:"2rem"}} />
             </Avatar>
             <Typography
